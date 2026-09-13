@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tools & Equipment — SJ Engineering</title>
+<meta name="description" content="The fabrication, welding, drilling, earthmoving and survey equipment SJ Engineering runs in-house." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="brand">
+    <img src="sj.png" style="width: 50px; height: auto;" alt="" srcset="">
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="product.html">Products</a></li>
+    <li><a href="equipment.html" class="active">Equipment</a></li>
+     <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="https://wa.me/923009239576?text=Hi%20SJ%20Engineering%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">WhatsApp Us</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Tools &amp; equipment</span>
+    <h1>36 machines, one workshop.</h1>
+    <p>From sheet rolling and certified welding rigs to excavators and a total station — this is the fleet behind every fabrication, ducting, and civil job we take on.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="tools-grid" id="tools-grid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <small>© 2026 SJ Engineering. Promising reliability for now and tomorrow.</small>
+    <small>Plot # LS-05, ST # 1/3, Sector 21, Korangi Industrial Area, Karachi-74900</small>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/923009239576?text=Hi%20SJ%20Engineering%2C%20I%20have%20a%20question%20about%20your%20equipment." target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s1 2.5 1.1 2.6c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4 15 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z"/></svg>
+  WhatsApp
+</a>
+
+<!-- ---------------- Chatbot widget ---------------- -->
+<button class="chat-launcher" id="chat-launcher" aria-label="Open assistant">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v11H8l-4 4V4z"/></svg>
+  <span class="dot"></span>
+</button>
+
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-head">
+    <div class="avatar">SJ</div>
+    <div class="info"><strong>SJ Engineering Assistant</strong><span>● online</span></div>
+    <button class="chat-close" id="chat-close" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-body" id="chat-body"></div>
+  <div class="chat-chips" id="chat-chips"></div>
+  <form class="chat-input-row" id="chat-form">
+    <input id="chat-input" type="text" placeholder="Ask about our equipment…" autocomplete="off" />
+    <button class="chat-send" type="submit">Send</button>
+  </form>
+  <div class="chat-note"><a href="#" id="chat-key-link">Enable full AI mode ⚡ (optional)</a></div>
+</div>
+
+<script type="module">
+  import { initChatbot } from "./js/chatbot.js";
+  initChatbot();
+
+  const toggle = document.getElementById("nav-toggle");
+  const links = document.getElementById("nav-links");
+  toggle.addEventListener("click", ()=> links.classList.toggle("open"));
+  links.querySelectorAll("a").forEach(a => a.addEventListener("click", ()=> links.classList.remove("open")));
+</script>
+
+<script type="module" src="./js/equipment.js"></script>
+</body>
+</html>

@@ -5,27 +5,20 @@
    stock photography / external image hosts) so the page has no
    broken-image risk and stays on-brand — same approach as the
    procedural 3D models on product.html.
-
-   NOTE: the 36 items below are representative placeholders built
-   from the categories your site already advertises (fabrication,
-   welding, drilling, earthmoving, survey). Swap in your real
-   fleet register — names, capacities, brands, and/or photos — by
-   editing the TOOLS array below.
    ============================================================ */
 
 const CATEGORIES = [
-  { id: "fabrication", label: "Fabrication & Welding", icon: "fabrication" },
-  { id: "coating",     label: "Surface Prep & Coating", icon: "coating" },
-  { id: "lifting",     label: "Lifting & Rigging",      icon: "lifting" },
-  { id: "earthmoving", label: "Earthmoving & Civil",    icon: "earthmoving" },
-  { id: "ducting",     label: "Ducting & Insulation",   icon: "ducting" },
-  { id: "boiler",      label: "Boiler & Piping",        icon: "boiler" },
-  { id: "firetest",    label: "Fire Safety & Testing",  icon: "firetest" },
-  { id: "survey",      label: "Survey & QA",            icon: "survey" }
+  { id: "fabrication", label: "Fabrication & Machining", icon: "fabrication" },
+  { id: "welding",     label: "Welding",                 icon: "welding" },
+  { id: "gas_supply",  label: "Gas & Air Supply",         icon: "gas_supply" },
+  { id: "drilling",    label: "Drilling",                 icon: "drilling" },
+  { id: "ducting",     label: "Sheet Metal & Ducting",    icon: "ducting" },
+  { id: "press",       label: "Press & Punch",            icon: "press" },
+  { id: "survey",      label: "Survey & Measurement",     icon: "survey" }
 ];
 
 const TOOLS = [
-  // Cutting, Rolling & Machining
+  // Fabrication & Machining
   { name: "Sheet Rolling Machine",      category: "fabrication", spec: "Plate & sheet forming to required radius" },
   { name: "Grinder 4\" & 9\"",          category: "fabrication", spec: "Surface finishing & weld dressing" },
   { name: "Auto Cutter",                category: "fabrication", spec: "Automated straight-line cutting" },
@@ -70,12 +63,11 @@ const TOOLS = [
 
 const ICONS = {
   fabrication: `<path d="M4 20 14 10"/><path d="M13 5l6 6-2 2-6-6z"/><path d="M18 4l2 2"/><path d="M3 21l2-2"/>`,
-  coating: `<rect x="7" y="8" width="8" height="13" rx="1.5"/><path d="M9 8V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3"/><path d="M17 6l2-1"/><path d="M18 9h2.2"/><path d="M17 12l2 1"/>`,
-  lifting: `<path d="M3 20h9"/><path d="M4 20V7l14 4"/><path d="M18 11v3.2"/><circle cx="17" cy="16.2" r="2"/>`,
-  earthmoving: `<circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h6l4-6h4"/><path d="M16 11l3 2-2 4-5 1"/>`,
+  welding: `<path d="M3 21l6-6"/><path d="M9 15l6-6"/><path d="M12 3l4 4-2 2-4-4z"/><path d="M17 6l2 2"/><path d="M2 12l3 3"/>`,
+  gas_supply: `<rect x="9" y="7" width="6" height="14" rx="2"/><path d="M11 7V4a1 1 0 0 1 1-1 1 1 0 0 1 1 1v3"/><path d="M9 12h6"/>`,
+  drilling: `<rect x="10" y="3" width="4" height="9" rx="1"/><path d="M12 12v3"/><path d="M8 15h8l-1 6H9z"/>`,
   ducting: `<path d="M4 4v8a4 4 0 0 0 4 4h8"/><path d="M20 20V4"/><path d="M4 4h4"/><path d="M16 20h4"/>`,
-  boiler: `<circle cx="12" cy="12" r="7"/><path d="M12 12l3-2"/><path d="M12 5v1"/><path d="M12 18v1"/><path d="M5 12h1"/><path d="M18 12h1"/>`,
-  firetest: `<path d="M8 3c2 3-2 4-1 7a3 3 0 0 0 6 0c0-2-1-2-1-4 2 1 3 3 3 5a5 5 0 0 1-10 0c0-3 1-5 3-8z"/>`,
+  press: `<rect x="5" y="3" width="14" height="6" rx="1"/><path d="M12 9v5"/><rect x="7" y="14" width="10" height="7" rx="1"/>`,
   survey: `<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/>`
 };
 

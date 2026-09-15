@@ -264,6 +264,75 @@ footer{ padding: 40px 0; }
 @media (max-width: 700px){ .tools-grid{ grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 440px){ .tools-grid{ grid-template-columns: 1fr; } }
 
+/* ============================================================
+   GALLERY PAGE
+   ============================================================ */
+.gallery-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 6px;
+}
+.gallery-grid a{
+  display:block; position:relative; overflow:hidden;
+  background: var(--bg-alt);
+}
+.gallery-grid img{
+  width:100%; height:100%; object-fit:cover;
+  transition: transform .4s ease, filter .4s ease;
+  filter: grayscale(10%) contrast(1.05);
+}
+.gallery-grid a:hover img{ transform: scale(1.07); filter: grayscale(0%) contrast(1.1); }
+.gallery-grid a::after{
+  content: attr(data-index);
+  position:absolute; left:10px; bottom:10px;
+  font-family: var(--display); font-weight:800; font-size: 12px;
+  color: var(--accent-ink); background: var(--accent);
+  padding: 3px 8px;
+  clip-path: polygon(4px 0,100% 0,100% calc(100% - 4px),calc(100% - 4px) 100%,0 100%,0 4px);
+  opacity: 0; transform: translateY(6px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.gallery-grid a:hover::after{ opacity:1; transform: translateY(0); }
+
+/* first tile runs larger for visual rhythm */
+.gallery-grid a:nth-child(1){ grid-column: span 2; grid-row: span 2; }
+
+@media (max-width: 860px){
+  .gallery-grid{ grid-template-columns: repeat(3, 1fr); grid-auto-rows: 160px; }
+}
+@media (max-width: 560px){
+  .gallery-grid{ grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px; }
+  .gallery-grid a:nth-child(1){ grid-column: span 2; grid-row: span 1; }
+}
+
+/* lightbox */
+.lightbox{
+  position: fixed; inset:0; z-index: 80;
+  background: rgba(10,10,12,0.92);
+  display:none; align-items:center; justify-content:center;
+  padding: 40px;
+}
+.lightbox.open{ display:flex; }
+.lightbox img{
+  max-width: min(92vw, 1100px); max-height: 86vh;
+  object-fit: contain;
+  border: 1px solid var(--line-strong);
+}
+.lightbox-close{
+  position:absolute; top:22px; right:26px;
+  background:none; border:0; color: var(--ink); font-size: 30px; line-height:1;
+}
+.lightbox-nav{
+  position:absolute; top:50%; transform: translateY(-50%);
+  background:none; border:0; color: var(--ink); font-size: 34px;
+  padding: 10px 16px; opacity: .7;
+}
+.lightbox-nav:hover{ opacity:1; color: var(--accent-2); }
+.lightbox-prev{ left: 10px; }
+.lightbox-next{ right: 10px; }
+
+
 
 /* ---------- WhatsApp floating button (site-wide) ---------- */
 .wa-float{
@@ -409,3 +478,112 @@ footer{ padding: 40px 0; }
 .typing span:nth-child(2){ animation-delay:.2s; }
 .typing span:nth-child(3){ animation-delay:.4s; }
 @keyframes blink{ 0%,80%,100%{ opacity:.25; } 40%{ opacity:1; } }
+/* ---------- team profile (photo + link) ---------- */
+.people-row{ display:flex; gap: 40px; margin-top: 40px; flex-wrap:wrap; }
+
+.person{
+  display:flex; align-items:center; gap: 16px;
+  border-left: 2px solid var(--accent); padding-left: 14px;
+  transition: transform .18s ease;
+}
+.person:hover{ transform: translateY(-2px); }
+.person:hover .person-photo{ filter: grayscale(0%); }
+.person:hover strong{ color: var(--accent-2); }
+
+.person-photo{
+  width: 56px; height: 56px;
+  object-fit: cover;
+  filter: grayscale(35%) contrast(1.05);
+  transition: filter .25s ease;
+  flex-shrink: 0;
+}
+
+.person-info strong{
+  display:block; color: var(--ink); font-size: 16px;
+  transition: color .18s ease;
+}
+.person-info span{ font-size: 13px; color: var(--muted-2); }
+
+/* ---------- hero (centered layout) ---------- */
+              .hero{
+                position: relative;
+                min-height: 100vh;
+                display:grid;
+                place-items: center;         /* was: grid-template-columns split */
+                text-align: center;
+                padding: 140px 28px 80px;
+                overflow:hidden;
+                border-bottom: 1px solid var(--line);
+              }
+              #hero-canvas{
+                position:absolute; inset:0; width:100%; height:100%; z-index:0;
+                opacity: 0.9;
+              }
+              .hero-copy{
+                position:relative; z-index:2;
+                max-width: 720px;            /* wider since it's no longer sharing the row */
+                margin: 0 auto;
+              }
+              .hero-copy p.lede{
+                margin-left: auto;
+                margin-right: auto;
+              }
+              .hero-actions{
+                display:flex; gap:16px; margin-top: 30px;
+                flex-wrap: wrap;
+                justify-content: center;      /* center the buttons */
+              }
+              .hero-stats{
+                position:relative; z-index:2;
+                display:flex; gap: 34px; margin-top: 54px;
+                justify-content: center;      /* center the stat blocks */
+              }
+
+              @media (max-width: 900px){
+                #hero-canvas{ opacity: .45; }
+              }
+
+
+
+
+/* ////// */
+
+
+.hero{
+  position: relative;
+  min-height: 100vh;
+  display:grid;
+  place-items: center;
+  text-align: center;
+  padding: 140px 28px 80px;
+  overflow:hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-bg{
+  position:absolute; inset:0; z-index:0;
+  background: linear-gradient(160deg, #1a1c20, #101114 70%); /* placeholder until video.mp4 exists */
+}
+.hero-bg-video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit: cover;     /* crops the 9:16 clip to fill the landscape hero */
+  object-position: center;
+}
+.hero-bg-overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(18,19,22,0.55), rgba(18,19,22,0.85) 75%);
+}
+
+.hero-copy{
+  position:relative; z-index:2;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hero-copy p.lede{ margin-left:auto; margin-right:auto; }
+.hero-actions{ display:flex; gap:16px; margin-top:30px; flex-wrap:wrap; justify-content:center; }
+.hero-stats{ position:relative; z-index:2; display:flex; gap:34px; margin-top:54px; justify-content:center; }
+
+@media (max-width: 900px){
+  .hero-bg-video{ object-position: center 30%; }
+}

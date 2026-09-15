@@ -23,6 +23,8 @@
     <li><a href="index.html#services">Services</a></li>
     <li><a href="product.html">Products</a></li>
      <li><a href="equipment.html">Equipment</a></li>
+         <li><a href="gallery.html" >Gallery</a></li>
+
     <li><a href="index.html#about">About</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
@@ -30,8 +32,31 @@
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
 </nav>
 
-<header class="hero" id="hero">
+<!-- <header class="hero" id="hero">
   <canvas id="hero-canvas"></canvas>
+  <div class="hero-copy">
+    <span class="eyebrow">Karachi, Pakistan · Est. industrial partner</span>
+    <h1>Engineering <em>excellence</em> built to outlast the job.</h1>
+    <p class="lede">Fabrication, mechanical, fire safety, boiler, solar and civil construction — delivered by one single-source team that treats precision and safety as non-negotiable.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="product.html">View our products →</a>
+      <a class="btn btn-ghost" href="https://wa.me/923009239576?text=Hi%20SJ%20Engineering%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener">Get a quote on WhatsApp</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>8</strong><span>core service lines</span></div>
+      <div><strong>36+</strong><span>machines &amp; tools in-house</span></div>
+      <div><strong>NFPA</strong><span>&amp; HSE compliant work</span></div>
+    </div>
+  </div>
+</header> -->
+
+<header class="hero" id="hero">
+  <div class="hero-bg">
+    <video id="hero-video" class="hero-bg-video" autoplay muted loop playsinline poster="./images/gallery/1.jpeg">
+      <source src="./hero/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-bg-overlay"></div>
+  </div>
   <div class="hero-copy">
     <span class="eyebrow">Karachi, Pakistan · Est. industrial partner</span>
     <h1>Engineering <em>excellence</em> built to outlast the job.</h1>
@@ -75,10 +100,27 @@
       <h2>Why teams choose SJ Engineering</h2>
       <p>At SJ Engineering, we deliver comprehensive mechanical, industrial, and construction solutions tailored to modern infrastructure and industrial sectors — built on precision, safety, and technical craftsmanship.</p>
       <p>We integrate high-standard engineering methodologies with modern field practices, so every project, from HVAC installations to industrial construction, is executed with quality, safety, and operational efficiency.</p>
-      <div class="people-row">
-        <div class="person"><strong>Justin Parvez</strong><span>CEO / Director</span></div>
-        <div class="person"><strong>Moon Sebastian</strong><span>Managing Director</span></div>
-      </div>
+     <!-- /// -->
+
+<div class="people-row">
+  <a class="person" href="" target="_blank" rel="noopener">
+    <img class="person-photo cut-sm" src="./sj.png" alt="Justin Parvez">
+    <div class="person-info">
+      <strong>Justin Parvez</strong>
+      <span>CEO / Director</span>
+    </div>
+  </a>
+
+  <a class="person" href="" target="_blank" rel="noopener">
+    <img class="person-photo cut-sm" src="./pics/sebastian.jpg" alt="Moon Sebastian">
+    <div class="person-info">
+      <strong>Moon Sebastian</strong>
+      <span>Managing Director</span>
+    </div>
+  </a>
+</div>
+
+     <!-- /// -->
     </div>
     <div>
       <div class="principle-list">
@@ -143,7 +185,9 @@
 
 <div class="chat-panel" id="chat-panel">
   <div class="chat-head">
-    <div class="avatar">SJ</div>
+    <div class="" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; margin-right: 10px;">
+      <img src="./sj.png" alt="" srcset="">
+    </div>
     <div class="info"><strong>SJ Engineering Assistant</strong><span>● online</span></div>
     <button class="chat-close" id="chat-close" aria-label="Close chat">✕</button>
   </div>
@@ -170,10 +214,6 @@
 
 <!-- 3D hero background: isolated + dynamically imported, so a blocked CDN
      or offline environment fails gracefully instead of breaking the page. -->
-<script type="module">
-  import("./js/hero-scene.js")
-    .then(m => m.initHeroScene("hero-canvas"))
-    .catch(err => console.warn("3D hero background unavailable:", err));
-</script>
+
 </body>
 </html>

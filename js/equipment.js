@@ -25,57 +25,47 @@ const CATEGORIES = [
 ];
 
 const TOOLS = [
-  // Fabrication & Welding (12)
-  { name: "Plate Rolling Machine",        category: "fabrication", spec: "3-roll, up to 20mm mild steel plate" },
-  { name: "CNC Plasma Cutting Table",     category: "fabrication", spec: "Cuts up to 32mm carbon steel" },
-  { name: "Hydraulic Guillotine Shear",   category: "fabrication", spec: "12mm x 3m capacity" },
-  { name: "Hydraulic Press Brake",        category: "fabrication", spec: "100-ton, 3m bed" },
-  { name: "SMAW Welding Sets",            category: "fabrication", spec: "400A, certified operators" },
-  { name: "GTAW (TIG) Welding Machine",   category: "fabrication", spec: "For stainless & precision joints" },
-  { name: "MIG/MAG Welding Machine",      category: "fabrication", spec: "High-deposition structural welds" },
-  { name: "Submerged Arc Welder (SAW)",   category: "fabrication", spec: "Long-seam tank & vessel welds" },
-  { name: "Pipe Beveling Machine",        category: "fabrication", spec: "Prepares weld-ready pipe ends" },
-  { name: "Radial Arm Drilling Machine",  category: "fabrication", spec: "Up to 50mm bore, structural steel" },
-  { name: "Surface Grinder",              category: "fabrication", spec: "Weld dressing & finishing" },
-  { name: "Bandsaw Cutting Machine",      category: "fabrication", spec: "Straight & mitre cuts, structural sections" },
+  // Cutting, Rolling & Machining
+  { name: "Sheet Rolling Machine",      category: "fabrication", spec: "Plate & sheet forming to required radius" },
+  { name: "Grinder 4\" & 9\"",          category: "fabrication", spec: "Surface finishing & weld dressing" },
+  { name: "Auto Cutter",                category: "fabrication", spec: "Automated straight-line cutting" },
+  { name: "Gas Cutter",                 category: "fabrication", spec: "Oxy-fuel flame cutting, mild steel" },
+  { name: "Profile Cutter",             category: "fabrication", spec: "CNC profile cutting of steel plate" },
+  { name: "Milling Machine",            category: "fabrication", spec: "Precision milling of metal components" },
+  { name: "Shaper Machine",             category: "fabrication", spec: "Flat surface & slot machining" },
+  { name: "Lathe Machine",              category: "fabrication", spec: "Turning, facing & threading of parts" },
+  { name: "Bench Grander",              category: "fabrication", spec: "Bench-mounted grinding & sharpening" },
 
-  // Surface Prep & Coating (3)
-  { name: "Abrasive Sandblasting Unit",   category: "coating", spec: "Sa 2.5 surface prep standard" },
-  { name: "Airless Spray Painting Rig",   category: "coating", spec: "Epoxy & polyurethane coating systems" },
-  { name: "Industrial Air Compressor",    category: "coating", spec: "Powers blasting & pneumatic tools" },
+  // Welding
+  { name: "Welding Plant",              category: "welding", spec: "Central welding power supply unit" },
+  { name: "CO2 Welding",                category: "welding", spec: "MIG/MAG welding with CO2 shielding gas" },
+  { name: "Argon Welding",              category: "welding", spec: "TIG welding with argon shielding gas" },
+  { name: "HDPE Welding Machine",       category: "welding", spec: "Butt/electrofusion welding of HDPE pipe" },
 
-  // Lifting & Rigging (5)
-  { name: "Mobile Crane",                 category: "lifting", spec: "25-ton capacity, site rigging" },
-  { name: "Crawler Crane",                category: "lifting", spec: "Heavy equipment installation" },
-  { name: "Forklift",                     category: "lifting", spec: "3-ton, yard & workshop handling" },
-  { name: "Chain Hoists & Block Sets",    category: "lifting", spec: "1–10 ton rated" },
-  { name: "Gantry Crane",                 category: "lifting", spec: "Workshop overhead lifting" },
+  // Gas & Air Supply
+  { name: "Oxygen Gas Cylinder",        category: "gas_supply", spec: "Oxygen supply for gas cutting/welding" },
+  { name: "Faun Gas Cylinder",          category: "gas_supply", spec: "Fuel gas supply for cutting torches" },
+  { name: "Air Compressor",             category: "gas_supply", spec: "Compressed air for pneumatic tools" },
 
-  // Earthmoving & Civil (5)
-  { name: "Excavator",                    category: "earthmoving", spec: "Foundation & trenching works" },
-  { name: "Backhoe Loader",               category: "earthmoving", spec: "Site grading & loading" },
-  { name: "Bulldozer",                    category: "earthmoving", spec: "Site clearing & levelling" },
-  { name: "Vibratory Roller Compactor",   category: "earthmoving", spec: "Sub-base & backfill compaction" },
-  { name: "Concrete Mixer",               category: "earthmoving", spec: "Foundation & footing pours" },
+  // Drilling
+  { name: "Hilti Drill Machine",        category: "drilling", spec: "Heavy-duty rotary/hammer drilling" },
+  { name: "Drill Machine",              category: "drilling", spec: "General-purpose portable drilling" },
+  { name: "Radial Drilling Machine",    category: "drilling", spec: "Large bore drilling on structural steel" },
+  { name: "Bench Drill Machine",        category: "drilling", spec: "Bench-mounted precision drilling" },
+  { name: "Magnetic Drill Machine",     category: "drilling", spec: "Portable magnetic-base drilling on steel" },
 
-  // Ducting & Insulation (3)
-  { name: "Duct Fabrication Roll-Former", category: "ducting", spec: "GI & SS sheet forming" },
-  { name: "Flange Forming Machine",       category: "ducting", spec: "TDF & slip-on duct flanges" },
-  { name: "Insulation Cutting Table",     category: "ducting", spec: "Thermal & acoustic lagging" },
+  // Sheet Metal & Ducting
+  { name: "Banding Machine",            category: "ducting", spec: "Banding/strapping of duct sections" },
+  { name: "Scape Folding",              category: "ducting", spec: "Sheet metal folding for scape/duct work" },
+  { name: "Cladding Machine",           category: "ducting", spec: "Metal cladding sheet forming" },
+  { name: "Ducting Machine",            category: "ducting", spec: "Fabrication of ductwork sections" },
 
-  // Boiler & Piping (3)
-  { name: "Pipe Threading Machine",       category: "boiler", spec: "Up to 4\" NPT/BSP" },
-  { name: "Hydrotest Pump",               category: "boiler", spec: "High-pressure line & vessel testing" },
-  { name: "Tube Expander",                category: "boiler", spec: "Boiler tube-to-drum sealing" },
+  // Press & Punch
+  { name: "Power Press",                category: "press", spec: "Sheet metal pressing & forming" },
+  { name: "Punching Machine",           category: "press", spec: "Hole punching in metal sheet/plate" },
 
-  // Fire Safety & Testing (2)
-  { name: "Hydrostatic Test Rig",         category: "firetest", spec: "Fire line & hydrant network testing" },
-  { name: "Pressure Gauge Calibration Bench", category: "firetest", spec: "NFPA-compliant instrument checks" },
-
-  // Survey & QA (3)
-  { name: "Total Station",                category: "survey", spec: "Site layout & as-built survey" },
-  { name: "Digital Auto Level",           category: "survey", spec: "Elevation & levelling checks" },
-  { name: "Ultrasonic Thickness Gauge",   category: "survey", spec: "NDT wall-thickness verification" }
+  // Survey & Measurement
+  { name: "Laser Level",                category: "survey", spec: "Site levelling & alignment checks" }
 ];
 
 const ICONS = {

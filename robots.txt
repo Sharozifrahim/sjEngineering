@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /node_modules/
-Disallow: /.parcel-cache/
-Disallow: /.env
-
-Sitemap: https://www.sjengineering.net/sitemap.xml
